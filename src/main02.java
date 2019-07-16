@@ -5,7 +5,7 @@ public class main02 {
 
         int[] input = {1,2,3,0,5,6,7,9};
         System.out.println(findMin(input));
-        findMin(input);
+
 
     }
 
@@ -17,8 +17,11 @@ public class main02 {
             if(arr[i] < result ){
                 result = arr[i];
                 pos = i;
+                //new results
             }
         }
         return result;
     }
+
+    public int result;
 }
