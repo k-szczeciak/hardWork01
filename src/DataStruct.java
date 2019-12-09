@@ -3,7 +3,7 @@ import java.util.*;
 public class DataStruct {
 
     public void dataStructlist(){
-        List myList = new ArrayList();
+        List<Integer> myList = new ArrayList<Integer>();
 
         myList.add(4);
         myList.add(1);
@@ -14,16 +14,31 @@ public class DataStruct {
         for (int i = 0; i < myList.size(); i++){
             System.out.println("list item no: " + i + " value: " +  myList.get(i));
         }
-        for (Object elem: myList
+        for (Integer elem: myList
              ) {
             System.out.println(elem);
+/*            if (elem.equals(6)){
+                System.out.println(myList.indexOf(elem));
+                myList.remove(myList.indexOf(elem));
+            }
+*/
         }
 
         Iterator<Integer> iterator = myList.iterator();
         while(iterator.hasNext()){
-            System.out.println(iterator.next());
+            Integer elem = iterator.next();
+            System.out.println(elem);
+            if (elem.equals(6)){
+                iterator.remove();
+            }
         }
 
+        System.out.println("after removal:");
+
+        for (Integer elem: myList
+        ) {
+            System.out.println(elem);
+        }
     }
 
     public void dataStructSet(){
@@ -40,6 +55,13 @@ public class DataStruct {
         mySet.add(0);
         mySet.add(23);
 
+        Iterator<Object> iterator = mySet.iterator();
+        System.out.println();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        System.out.println();
         for (Object elem: mySet
              ) {
             System.out.println(elem);
@@ -55,15 +77,10 @@ public class DataStruct {
         myMap.put(1, "jeden");
         myMap.put(2, "bla bla");
 
-
-
-
         Set<Integer> keys = myMap.keySet();
         for (Integer key: keys){
             System.out.println("klucz: " + key + ", wartość: " + myMap.get(key));
         }
-
-
     }
 
 }
